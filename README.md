@@ -5,7 +5,7 @@ This is the code used to perform the calculations in the paper,
 (https://arxiv.org/pdf/2408.04067).
 
 It has no external dependencies and doesn't use anything fancy in the code,
-so it should build easily on a reasonable platform just using: ```make```
+so it should build easily on a reasonable platform just using make.
 
 
 ##    Brief summary:
