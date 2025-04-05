@@ -10,6 +10,7 @@ so it should build easily on a reasonable platform just using make.
 
 ##    Brief summary:
 
+	```
      Let k>=2 be an even integer. Let q be a prime power such that
                q == k+1 (mod 2k).
      Let S_k be the subgroup of F_q^* of order (q-1)/k consisting of 
@@ -30,11 +31,12 @@ so it should build easily on a reasonable platform just using make.
      transitive subtournament of G_k(F_q). If that largest trans. sub-tour. has
      size t, we record the triple q,k,t to file. From that, we can extract what
      we want.
-
+	```
 
 ##    About the code:
 
      [!CAUTION]
+	```
      * This code is written with speed in mind, not safeness or re-usability.
        Nearly all of the functions here are wildly unsafe, with no argument verification
        or safety checks or anything that would slow things down.
@@ -57,4 +59,4 @@ so it should build easily on a reasonable platform just using make.
 
      * In many places, the code uses an enumeration of the elements of F_q, to make various tasks
        a bit faster (i.e., using lookup tables and such).
-
+	```
