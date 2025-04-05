@@ -1,0 +1,17 @@
+payley.c :
+  The main program file for this project.
+
+extract.py :
+  Reads a .csv file of triples, as produced by this program,
+  and generates a tabular summary.
+
+
+ffq.c, ffq.h :
+  Code for synthesis of and basic arithmetic in small
+  finite fields (machine precision only).
+
+
+common.c, common.h :
+    A few functions extracted from other code which do
+    things that are not specific to this project.
+
