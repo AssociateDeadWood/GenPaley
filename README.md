@@ -11,19 +11,19 @@ so it should build easily on a reasonable platform just using make.
 ##    Brief summary:
 
 
-Let k>=2 be an even integer. Let q be a prime power such that
-       q == k+1 (mod 2k).
-Let S_k be the subgroup of F_q^* of order (q-1)/k consisting of 
-the k-th power residues. 
-Let G_k(q) be the directed graph with 
- * vertices: elements of F_q,
- * an edge a-->b iff b-a\in S_k.
-(Note: the conditions on q ensure that -1\not\in S_k).
-Let K_m(G) denote the number of transitive subtournaments of order m
-contained in a digraph G.
+Let $k\ge2$ be an even integer. Let $q$ be a prime power such that
+       $$q == k+1 (mod 2k).$$
+Let $S_k$ be the subgroup of $\mathbb{F}_q^*$ of order $(q-1)/k$ consisting of 
+the $k$-th power residues. 
+Let $G_k(q)$ be the directed graph with 
+ * vertices: elements of $\mathbb{F}_q$,
+ * an edge $a\to b$ iff $b-a\in S_k$.
+(Note: the conditions on q ensure that $-1\not\in S_k$).
+Let $K_m(G)$ denote the number of transitive subtournaments of order $m$
+contained in a digraph $G$.
 
-The goal is to find the largest q for which K_m(G_k(q)) = 0,
-for various values of m and k. The reason these quantities are of 
+The goal is to find the largest $q$ for which $K_m(G_k(q)) = 0$,
+for various values of $m$ and $k$. The reason these quantities are of 
 interest is that there is a relationship with Ramsey numbers. See the paper
 above for details. 
 
@@ -31,6 +31,27 @@ What this code actually does is, for a given k and q, find the largest
 transitive subtournament of G_k(F_q). If that largest trans. sub-tour. has
 size t, we record the triple q,k,t to file. From that, we can extract what
 we want.
+
+The way we find the size of that largest transitive subtournament is
+by using Lemma 4.2(d) in the McCarthy, Springfield paper: 
+Let H_k(q) be the subgraph of G_k(q) induced by S_k. Then let H_k^1(q)
+be the subgraph of H_k(q) induced by the set of out-neighbors of 1 in
+H_k(q). By that lemma, G_k(q) has a transitive subtournament of order m
+iff H_k^1(q) has a transitive subtournament of order m-2. So it suffices
+to find the largest transitive subtournament of H_k^1(q). For that,
+use a straightforward recursive approach : 
+
+extend_chain( (a1,...,ar), S):
+  * Input: a totally ordered chain a1 < a2 < ... < ar, and the set
+    S = { x\in H_k^1(q) : aj < x for all 1<=j<=r}.
+  * Set M <-- r.
+  * For each x\in S, set S' <-- S\cap Successors(x), set 
+    M <-- max{M, extend_chain( (a1,...,ar,x), S')}.
+  * return M.
+
+We then do extend_chain( (a1), Successors(a1)) for each a1\in H_k^1(q)
+to find the maximum length of such a chain.
+
 	
 
 ##    About the code:
