@@ -12,13 +12,13 @@ so it should build easily on a reasonable platform just using make.
 
 
 Let $k\ge2$ be an even integer. Let $q$ be a prime power such that
-       $$q \equiv k+1 (\mathrm{mod}\\,\\, 2k).$$
+       $$q \equiv k+1 \\,\\, (\mathrm{mod}\\,\\, 2k).$$
 Let $S_k$ be the subgroup of $\mathbb{F}_q^*$ of order $(q-1)/k$ consisting of 
 the $k$-th power residues. 
 Let $G_k(q)$ be the directed graph with 
  * vertices: elements of $\mathbb{F}_q$,
  * an edge $a\to b$ iff $b-a\in S_k$.
-(Note: the conditions on q ensure that $-1\not\in S_k$).
+(Note: the conditions on $q$ ensure that $-1\not\in S_k$).
 Let $K_m(G)$ denote the number of transitive subtournaments of order $m$
 contained in a digraph $G$.
 
@@ -77,5 +77,5 @@ things up pretty good.
 integers. I'm not sure exactly where it will fail but it would be somewhere around
 $2^{31}$, which is well above the range of interest (signed mult. overflow). 
 
-* In many places, the code uses an enumeration of the elements of $\mathbb{F}_q$, to make various tasks
+* In many places, the code uses an enumeration of the elements of $\mathbb{F}_q$ to make various tasks
 a bit faster (i.e., using lookup tables and such).
