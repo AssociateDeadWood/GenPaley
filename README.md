@@ -43,7 +43,7 @@ use a straightforward recursive approach :
 
 extend_chain( (a1,...,ar), S):
   * Input: a totally ordered chain $a1 < a2 < ... < ar$, and the set
-    $S = \\{ x\in H_k^1(q) \\,:\\, a_j < x \mbox{for all} \\,\\, 1\le j\le r\\}$.
+    $S = \\{ x\in H_k^1(q) \\,:\\, a_j < x \\,\\, \mbox{for all} \\,\\, 1\le j\le r\\}$.
   * Set $M \gets r$.
   * For each $x\in S$, set $S' \gets S\cap \mathrm{Successors}(x)$, set 
     $M \gets \mathrm{max}\\{M, \mathrm{extend\\_chain}( (a1,...,ar,x), S')\\}$.
