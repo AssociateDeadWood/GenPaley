@@ -39,7 +39,7 @@ be the subgraph of $H_k(q)$ induced by the set of out-neighbors of 1 in
 $H_k(q)$. By that lemma, $G_k(q)$ has a transitive subtournament of order $m$
 iff $H_k^1(q)$ has a transitive subtournament of order $m-2$. So it suffices
 to find the largest transitive subtournament of $H_k^1(q)$. For that,
-use a straightforward recursive approach : 
+we use a straightforward recursive approach : 
 
 extend_chain( (a1,...,ar), S):
   * Input: a totally ordered chain $a1 < a2 < ... < ar$, and the set
