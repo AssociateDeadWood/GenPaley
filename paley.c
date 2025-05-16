@@ -449,7 +449,7 @@ int max_trans_subtourney(gen_payley_prob_t *P)
   int      chain_size, num_possible_successors, i, j, n0, n1;
   int      len, max=0;
 
-  /* This is using Lemma 4.2(d) in the McCarthy, Springfield paper 
+  /* This is using Lemma 4.2(c) in the McCarthy, Springfield paper 
      to find the maximum length transitive subtournament of G_k(q);
      let H_k(q) be the subgraph of G_k(q) induced by S_k. Then let H_k^1(q)
      be the subgraph of H_k(q) induced by the set of out-neighbors of 1 in
