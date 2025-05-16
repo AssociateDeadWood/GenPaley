@@ -33,7 +33,7 @@ size $t$, we record the triple $q,k,t$ to file. From that, we can extract what
 we want.
 
 The way we find the size of that largest transitive subtournament is
-by using Lemma 4.2(d) in the McCarthy, Springfield paper: 
+by using Lemma 4.2(c) in the McCarthy, Springfield paper: 
 Let $H_k(q)$ be the subgraph of $G_k(q)$ induced by $S_k$. Then let $H_k^1(q)$
 be the subgraph of $H_k(q)$ induced by the set of out-neighbors of 1 in
 $H_k(q)$. By that lemma, $G_k(q)$ has a transitive subtournament of order $m$
