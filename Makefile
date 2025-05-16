@@ -2,13 +2,13 @@ THISDIR=$(shell basename `pwd`)
 DATE=$(shell date +"%m-%d-%y.%H-%M")
 
 
-all : payley ;
+all : paley ;
 
-payley : payley.c ffq.c ffq.h common.c common.h ;
-	gcc -O3 -o payley payley.c ffq.c common.c -lm
+paley : paley.c ffq.c ffq.h common.c common.h ;
+	gcc -O3 -o paley paley.c ffq.c common.c -lm
 
 clean : ;
-	rm -f *.o payley
+	rm -f *.o paley
 
 squeaky : clean ;
 

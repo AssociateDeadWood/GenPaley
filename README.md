@@ -1,4 +1,4 @@
-# GenPayley
+# GenPaley
 
 This is the code used to perform the calculations in the paper,
 [A Mathon-type construction for digraphs and improved lower bounds for Ramsey numbers]
